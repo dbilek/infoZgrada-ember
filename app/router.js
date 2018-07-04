@@ -7,6 +7,13 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('residential_communities', { path: '/rc' });
+  this.route('residential_community', {resetNamespace: true, path: '/residential_communities/:residential_community_id'}, function() {
+    this.route('malfunction', {path: '/malfunctions/:id'});
+    this.route('malfunctions', {path: '/malfunctions' });
+  });
+  
 });
 
 export default Router;
+

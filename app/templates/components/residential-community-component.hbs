@@ -1,0 +1,7 @@
+<p><strong>Pib:</strong> {{rc.pib}}</p>
+{{#if rc.registration_number}}
+  <p><strong>Registarski broj:</strong> {{rc.registration_number}}</p>
+{{/if}}
+<p><strong>Adresa:</strong>{{link-to rc.address 'residential_community' rc }}</p>
+<p><strong>Grad:</strong> {{rc.city}}</p>
+<p><strong>Postanski broj:</strong> {{rc.postcode}}</p>
