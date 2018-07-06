@@ -1,5 +1,7 @@
 {{#link-to 'residential_communities'}}Sve stambene zajednice{{/link-to}}
 <h2>Stambena zajednica</h2>
 {{residential-community-component rc=model}}
-<p>{{link-to "Kvarovi" "residential_community.malfunctions" model.id}}</p>
+{{#unless hideMalfunctionsLink}}
+	<p>{{link-to "Kvarovi" "residential_community.malfunctions" model invokeAction=(action 'hideMalfunction')}}</p>
+{{/unless}}
 {{outlet}}
