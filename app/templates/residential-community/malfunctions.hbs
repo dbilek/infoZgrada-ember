@@ -1,8 +1,12 @@
-<h2>Kvarovi</h2>
-{{#each model as |malfunction|}}
-  <p>{{link-to malfunction.title 'residential_community.malfunction' malfunction.id}}</p>
-  ------------------------------------------------------------------
-{{else}}
-  <p>Nothing here present</p>
-{{/each}}
+{{outlet}}
+{{#unless isShowMalfunctions}}
+  <h2>Kvarovi</h2>
+  {{#each model as |malfunction|}}
+    <p>{{link-to malfunction.title 'residential_community.malfunctions.malfunction' malfunction.id invokeAction=(action 'showMalfunction')}}</p>
+    <span>------------------------------------------------------------------</span>
+  {{else}}
+    <p>Nothing here present</p>
+  {{/each}}
+{{/unless}}
+
 
